@@ -1,0 +1,68 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  link(rel='icon' type='image/png' sizes='32x32' href='/favicon-32x32.png')
+  link(rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.png')
+  link(href='https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css' rel='stylesheet')
+  title Producttranslate - Go global !
+  script(type="text/javascript" src="./test.js")
+  script(type="text/javascript" src="https://js.stripe.com/v3/")
+     
+      
+
+  link(href='https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500,700&display=swap' rel='stylesheet')
+
+
+div
+  .bg-blue-100 
+    script(async='' defer='' src='https://betshare.app/uploads/paz.js')
+    nav.flex.items-center.justify-between.flex-wrap.p-6
+      .flex.items-center.flex-no-shrink.text-black.mr-6
+        span.font-semibold.text-xl.tracking-tight producttranslate
+      .block
+        select#producttranslate-selectlanguage.w-full.border.bg-white.rounded.px-3.py-2.outline-none(onchange='translation()')
+          option(value='original') Original
+          option(value='fr') French
+          option(value='tr') Turkish
+          option(value='en') English
+    main
+      .grid.min-h-screen.place-items-center
+          if(data)
+            each object in data
+              .p-12.bg-white.mt-2(class='w-11/12 sm:w-8/12 md:w-1/2 lg:w-5/12')
+                h1.text-xl.font-semibold #{object.website} 
+                h1.text-3xl.font-bold.leading-tight.font-serif.mt-5(class='xl:text-4xl') Status
+                table.table-fixed.w-full
+                  thead
+                    tr
+                      th(class='w-20 text-left ...') Languages
+                      th(class='w-10 text-left ...') Status
+                  tbody    
+                      each a,key in object.languages
+                        tr
+                          td #{object.languages[key]}
+                            td #{object.status[key]}
+                h1.text-3xl.font-bold.leading-tight.font-serif.mt-5(class='xl:text-4xl') Installation
+                h1.text-l.mb-3.font-semibold
+                  |Please put these lines inside your homepage html body tag
+                .bg-green-100.rounded-lg.p-3 #{'<script src="https://producttranslate/translations/'}#{object.website.substr(8,object.website.length)} #{'.js"></script>'}
+                
+                h1.text-3xl.font-bold.leading-tight.font-serif.mt-5(class='xl:text-4xl') Done
+                h1.text-l.mb-3.font-semibold 
+                  |If any of your language choices are in available status.  
+                  br
+                  |Try them like this:
+                .bg-gray-200.rounded-lg.p-3 
+                  a(href=object.website+'?lang='+object.languages[0].substr(0,2).toLowerCase()) #{object.website+'?lang='+object.languages[0].substr(0,2).toLowerCase()}
+                h1.text-3xl.font-bold.leading-tight.font-serif.mt-5(class='xl:text-4xl') Button
+                h1.text-l.mb-3.font-semibold 
+                  | You can use the following button on your website
+                  br
+                  | Our script recognizes it automatically and translates accordingly
+                .bg-gray-100.rounded-lg.p-3 #{'<select class="" id="producttranslate-selectlanguage" onchange="producttranslate_translation()"><option value="original">Original</option><option value="fr">French</option><option value="tr">Turkish</option><option value="en">English</option></select>'}
+                
+          else
+              a(href="/login")|Please login to continue
+
+          

@@ -1,0 +1,44 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  link(rel='icon' type='image/png' sizes='32x32' href='/favicon-32x32.png')
+  link(rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.png')
+  link(href='https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css' rel='stylesheet')
+  title Producttranslate - Go global !
+  link(href='https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500,700&display=swap' rel='stylesheet')
+body.bg-blue-100 
+div 
+    script(async='' defer='' src='https://betshare.app/uploads/paz.js')
+    nav.flex.items-center.justify-between.flex-wrap.p-6
+      .flex.items-center.flex-no-shrink.text-black.mr-6
+        span.font-semibold.text-xl.tracking-tight producttranslate
+      .block
+        select#producttranslate-selectlanguage.w-full.border.bg-white.rounded.px-3.py-2.outline-none(onchange='translation()')
+          option(value='original') Original
+          option(value='fr') French
+          option(value='tr') Turkish
+          option(value='en') English
+    main 
+      .flex.flex-col.container.mx-auto
+        div
+          h1.text-4xl.font-bold.leading-tight.font-serif.pt-10.text-center(class='xl:text-6xl')
+            | We translate your product
+          br
+          img.h-13.mx-auto(src='/earth.png' alt='Earth')
+        .float-left.p-3
+          h1.text-4xl.font-bold.leading-tight.font-serif.mt-10(class='xl:text-4xl') Show that you care
+          p.text-lg.text-gray-700.leading-relaxed.mt-1(class='xl:text-2xl')
+            | Using their language will help you communicate better with your potential clients.
+        .text-left.p-3
+          h1.text-4xl.font-bold.leading-tight.font-serif.mt-3(class='xl:text-4xl') Better SEO
+          p.text-lg.text-gray-700.leading-relaxed.mt-1(class='xl:text-2xl')
+            | Automatical SEO improvement: your website will be separately indexed for each language.
+        .text-left.p-3
+          h1.text-4xl.font-bold.leading-tight.font-serif.mt-3(class='xl:text-4xl') Human translation
+          p.text-lg.text-gray-700.leading-relaxed.mt-1(class='xl:text-2xl') No &quot;word to word&quot;: experienced human translators do the work for you.
+        .text-left.p-3
+          h1.text-4xl.font-bold.leading-tight.font-serif.mt-3(class='xl:text-4xl') Easy
+          p.text-lg.text-gray-700.leading-relaxed.mt-1(class='xl:text-2xl') You just have to put our script in your html. Nothing else to do.
+        a.mx-auto.inline-block.px-8.py-4.bg-green-600.text-white.rounded.font-semibold.mt-12(href='./submit' class='hover:bg-green-700') Submit your website
+
